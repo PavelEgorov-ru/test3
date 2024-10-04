@@ -2,6 +2,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+table {
+  background-color: red;
+}
+
 h1 {
   color: blue;
 }
