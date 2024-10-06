@@ -9,4 +9,11 @@ block variables
     ]
   - var test = 'Привет'
 block content
-  include ./components/header/header.pug
+    include ./components/header/header.pug
+        block links
+            include ./components/header/mixin__list-link
+            if headerLinks.length > 0
+              each item in headerLinks
+                +list-link(item.linkUrl, item.linkText)
+            else 
+              span

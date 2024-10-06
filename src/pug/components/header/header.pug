@@ -13,13 +13,4 @@ tr
                   a(href="https://www.sima-land.ru/" target="_blank" style="text-decoration: none;")
                     img(src="https://rassylka.static1-sima-land.com/ftp_rassylka/template/design2020/gold23.png" width="113" height="45" alt="" style="display: block; border: none; padding: 0px;")
                 td(align="right" valign="middle" style="padding:8px 16px 8px 8px; font-family: Arial, sans-serif; font-size:14px; line-height: 20px;")
-                  // - include ./mixin__list-link.pug
-                  // - if headerLinks.length
-                  // -  each item in headerLinks
-                  // -    +list-link(item.linkUrl, item.linkText)
-                  // - else 
-                  // -   span
-                  span = headerLinks[0].linkText
-                  span акция 
-                  span акция 
-                  
+                  block links
