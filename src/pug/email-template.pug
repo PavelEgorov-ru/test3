@@ -4,9 +4,13 @@ block content
   include ./components/header/header.pug
     block links
       include ./components/header/mixin__list-link
-      if headerLinks.length > 0
-        each item in headerLinks
-          +list-link(item.linkUrl, utm, item.linkText)
+      if date.headerLinks.length > 0
+        each item in date.headerLinks
+          +list-link(item.linkUrl, date.utm, item.linkText)
       else 
         span
   include ./components/space/space.pug
+  include ./components/banner/banner.pug 
+    block banner 
+      include ./components/banner/mixin__banner.pug 
+      +banner(date.promoUrl, date.utm, date.bannerImg, date.promoDesc)
