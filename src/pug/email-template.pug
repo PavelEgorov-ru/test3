@@ -1,11 +1,12 @@
 extends ./layout/default.pug
 
 block content
-    include ./components/header/header.pug
-        block links
-            include ./components/header/mixin__list-link
-            if headerLinks.length > 0
-              each item in headerLinks
-                +list-link(item.linkUrl, utm, item.linkText)
-            else 
-              span
+  include ./components/header/header.pug
+    block links
+      include ./components/header/mixin__list-link
+      if headerLinks.length > 0
+        each item in headerLinks
+          +list-link(item.linkUrl, utm, item.linkText)
+      else 
+        span
+  include ./components/space/space.pug
