@@ -7,15 +7,17 @@ const watch = require("gulp-watch");
 
 // Задача для компиляции Pug в HTML
 gulp.task("pug", function () {
-  return gulp
-    .src("src/pug/**/*.pug") // Исходный Pug-файл
-    .pipe(pug()) // Компиляция Pug в HTML
-    .pipe(
-      gulpPug({
-        pretty: true,
-      })
-    )
-    .pipe(gulp.dest("dist")); // Сохранение в выходную папку
+  return (
+    gulp
+      .src("src/pug/*.pug") // Исходный Pug-файл
+      .pipe(pug()) // Компиляция Pug в HTML
+      // .pipe(
+      //   gulpPug({
+      //     pretty: true,
+      //   })
+      // )
+      .pipe(gulp.dest("dist"))
+  ); // Сохранение в выходную папку
 });
 
 // Задача для инлайна CSS
