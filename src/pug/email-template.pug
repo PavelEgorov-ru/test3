@@ -1,16 +1,19 @@
-doctype html
-html
-  head
-    title Email Template
-    style.
-      /* Inline styles should be minimal. Global styles are preferred. */
-      
-      /*h1 { color: blue; }*/
-      
-      /*p { font-size: 16px; }*/
-  body
-    table(width="100%")
-      tr
-        td
-          h1 Hello, Email
-          p This is a sample email template created using Pug and Gulp.
+extends ./layout/default.pug
+block variables
+  - 
+    var headerLinks = [
+        {linkUrl:'https://www.sima-land.ru/offers/', linkText:'\u00A0\u00A0Акции\u00A0\u00A0' },
+        {linkUrl:'https://www.sima-land.ru/sale/shveynaya-galantereya/', linkText:'\u00A0\u00A0Скидки\u00A0\u00A0'},
+        {linkUrl:'https://www.sima-land.ru/hit/shveynaya-galantereya/', linkText:'\u00A0\u00A0Хиты\u00A0\u00A0'},
+        {linkUrl:'https://www.sima-land.ru/new/shveynaya-galantereya/', linkText:'\u00A0\u00A0Новинки\u00A0\u00A0'}
+    ]
+  - var test = 'Привет'
+block content
+    include ./components/header/header.pug
+        block links
+            include ./components/header/mixin__list-link
+            if headerLinks.length > 0
+              each item in headerLinks
+                +list-link(item.linkUrl, item.linkText)
+            else 
+              span
