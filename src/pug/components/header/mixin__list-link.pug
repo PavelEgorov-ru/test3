@@ -1,3 +1,3 @@
-mixin list-link(url, text)
-  a(href=url align="center" target="_blank" style="text-decoration: none; color:#ffffff !important; padding: 5px 0px; display: inline-block;")                  
+mixin list-link(url, utm, text)
+  a(href=url+utm align="center" target="_blank" style="text-decoration: none; color:#ffffff !important; padding: 5px 0px; display: inline-block;")                  
     span(style="font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; color: #ffffff;")=text
