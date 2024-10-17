@@ -21,17 +21,22 @@ gulp.task("pug", function () {
 });
 
 // Задача для инлайна CSS
-gulp.task("inline-css", function () {
-  return gulp
-    .src("dist/*.html") // Получаем скомпилированные HTML-файлы
-    .pipe(inlineCss({ applyStyleTags: true, removeStyleTags: true })) // Встраиваем CSS
-    .pipe(gulp.dest("dist")); // Сохраняем результат
-});
+// gulp.task("inline-css", function () {
+//   return gulp
+//     .src("dist/*.html") // Получаем скомпилированные HTML-файлы
+//     .pipe(inlineCss({ applyStyleTags: true, removeStyleTags: true })) // Встраиваем CSS
+//     .pipe(gulp.dest("dist")); // Сохраняем результат
+// });
 
 // Задача для наблюдения за изменениями
+// gulp.task("watch", function () {
+//   gulp.watch("src/pug/**/*.pug", gulp.series("pug", "inline-css")); // Наблюдение за Pug файлами
+// });
+
 gulp.task("watch", function () {
-  gulp.watch("src/pug/**/*.pug", gulp.series("pug", "inline-css")); // Наблюдение за Pug файлами
+  gulp.watch("src/pug/**/*.pug", gulp.series("pug")); // Наблюдение за Pug файлами
 });
 
 // Задача по умолчанию
-gulp.task("default", gulp.series("pug", "inline-css", "watch"));
+// gulp.task("default", gulp.series("pug", "inline-css", "watch"));
+gulp.task("default", gulp.series("pug", "watch"));
