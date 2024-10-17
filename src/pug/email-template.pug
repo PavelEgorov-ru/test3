@@ -16,5 +16,11 @@ block content
       +banner(date.promoUrl, date.utm, date.bannerImg, date.promoDesc)
   include ./components/body/body.pug 
     block body 
-      include ./components/text/mixin__text.pug 
+      include ./components/text/mixin__text.pug      
       +text-block(date.textDate)
+      include ./components/article/mixin__cards-row.pug
+      if date.cards.length > 0
+        each cards in date.cards
+          +cards-row(cards)
+      else 
+        span
