@@ -10,7 +10,7 @@ block content
         block text 
           include ./components/text/mixin__text.pug 
           +text(date.textDate)
-      include ./components/article/mixin__cards-row.pug
+      include ./components/cards/mixin__cards-row.pug
       if date.cards.length > 0
         each cards in date.cards
           +cards-row(cards, date.meta.utm)
