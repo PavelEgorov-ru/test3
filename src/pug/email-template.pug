@@ -10,10 +10,14 @@ block content
         block text 
           include ./components/text/mixin__text.pug 
           +text(date.textDate)
-      include ./components/cards/mixin__cards-row.pug
-      if date.cards.length > 0
-        each cards in date.cards
-          +cards-row(cards, date.meta.utm)
+      //- include ./components/cards/mixin__cards-row.pug
+      //- if date.cards.length > 0
+      //-   each cards in date.cards
+      //-     +cards-row(cards, date.meta.utm)
+      include ./components/cards/mixin__cards-3-6.pug 
+      +cards-3-6(date.cards_3_6, date.meta.utm)
+      include ./components/cards/mixin__cards-3-3.pug 
+      +cards-3-6(date.cards_3_3, date.meta.utm)
       include ./components/button/button.pug 
         block button
           include ./components/button/mixin__button.pug
