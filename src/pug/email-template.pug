@@ -1,19 +1,9 @@
 extends ./layout/default.pug
 
 block content
-  include ./components/header/header.pug
-    block links
-      include ./components/header/mixin__list-link
-      if date.headerLinks.length > 0
-        each item in date.headerLinks
-          +list-link(item.linkUrl, date.meta.utm, item.linkText)
-      else 
-        span
+  include ./components/header/header.pug   
   include ./components/space/space.pug
   include ./components/banner/banner.pug 
-    block banner 
-      include ./components/banner/mixin__banner.pug 
-      +banner(date.meta)
   include ./components/body/body.pug 
     block body 
       include ./components/text/mixin__text.pug      
