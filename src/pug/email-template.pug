@@ -7,6 +7,9 @@ block content
   include ./components/body/body.pug 
     block body 
       include ./components/text/text.pug
+        block text 
+          include ./components/text/mixin__text.pug 
+          +text(date.textDate)
       include ./components/article/mixin__cards-row.pug
       if date.cards.length > 0
         each cards in date.cards
