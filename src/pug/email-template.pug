@@ -1,26 +1,33 @@
 extends ./layout/default.pug
 
 block content
-  include ./components/header/header.pug   
+  //- шапка
+  include ./components/header/header.pug
+  //- пустоя полоса
   include ./components/space/space.pug
-  include ./components/banner/banner.pug 
-  include ./components/body/body.pug 
+  //- баннер
+  include ./components/banner/banner.pug
+  //- тело письма
+  include ./components/body/body.pug
     block body 
+      //- подключение тектсового блока
       include ./components/text/text.pug
         block text 
           include ./components/text/mixin__text.pug 
           +text(date.textDate)
+      //- подключение карточек
       include ./components/article/mixin__cards-row.pug
       if date.cards.length > 0
         each cards in date.cards
           +cards-row(cards)
-      else 
-        span
+      //- подключение кнопки
       include ./components/button/button.pug 
         block button
           include ./components/button/mixin__button.pug
           +button(date.meta.promoUrl)
+  //- пустоя полоса
   include ./components/space/space.pug
+  //- наши преимущества
   include ./components/benefit/mixin__benefit.pug
   +benefit(date.benefit)
   include ./components/space/space.pug
