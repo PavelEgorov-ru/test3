@@ -6,8 +6,7 @@ block content
   include ./components/banner/banner.pug 
   include ./components/body/body.pug 
     block body 
-      include ./components/text/mixin__text.pug      
-      +text-block(date.textDate)
+      include ./components/text/text.pug
       include ./components/article/mixin__cards-row.pug
       if date.cards.length > 0
         each cards in date.cards
