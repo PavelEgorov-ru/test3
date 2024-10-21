@@ -14,22 +14,26 @@ block content
       if date.cards4.length > 0
         each cards in date.cards4
           +cards-row(cards, date.meta.utm, date.meta.size)
-      include ./components/button/button.pug 
-        block button
-          include ./components/button/mixin__button.pug
-          +button(date.meta.promoUrl)
-      include ./components/cards/mixin__cards-3-6.pug 
-      +cards-3-6(date.cards_3_6, date.meta.utm)
-      include ./components/button/button.pug 
-        block button
-          include ./components/button/mixin__button.pug
-          +button(date.meta.promoUrl)
-      include ./components/cards/mixin__cards-3-3.pug 
-      +cards-3-6(date.cards_3_3, date.meta.utm)
-      include ./components/button/button.pug 
-        block button
-          include ./components/button/mixin__button.pug
-          +button(date.meta.promoUrl)
+      //- include ./components/cards/mixin__cards-row.pug
+      //- if date.cards4.length > 0
+      //-   each cards in date.cards4
+      //-     +cards-row(cards, date.meta.utm, date.meta.size)
+      //- include ./components/button/button.pug 
+      //-   block button
+      //-     include ./components/button/mixin__button.pug
+      //-     +button(date.meta.promoUrl)
+      //- include ./components/cards/mixin__cards-3-6.pug 
+      //- +cards-3-6(date.cards_3_6, date.meta.utm)
+      //- include ./components/button/button.pug 
+      //-   block button
+      //-     include ./components/button/mixin__button.pug
+      //-     +button(date.meta.promoUrl)
+      //- include ./components/cards/mixin__cards-3-3.pug 
+      //- +cards-3-6(date.cards_3_3, date.meta.utm)
+      //- include ./components/button/button.pug 
+      //-   block button
+      //-     include ./components/button/mixin__button.pug
+      //-     +button(date.meta.promoUrl)
   include ./components/space/space.pug
   include ./components/benefit/benefit.pug
   include ./components/space/space.pug
